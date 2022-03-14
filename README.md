@@ -1,4 +1,6 @@
 # frontProject
-## Alireza Norouzi
-## Mohajer University
+## علیرضا نوروزی
+## ترم 1 کاردانی نرم افزار
+## دانشگاه شهید مهاجر اصفهان
+## طراحی وب - مهندس نوید ایمانی
 ## Master: @navidimani-sisco
