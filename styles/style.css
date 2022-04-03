@@ -1,0 +1,134 @@
+*{
+  font-family: vazir, 'iransansmobile', 'B titr';
+  font-size: 20px;
+}
+
+body{
+  background-color:#2b2d2f;
+}
+
+.holder {
+  padding: 30px;
+  text-align: center;
+  background: rgb(56, 197, 178);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border-radius: 10px;
+}
+
+.box {
+  padding: 10px;
+  padding-top: 30px;
+  width: 40%;
+  margin: 20px  auto;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgb(160, 159, 159);
+  background-color: aliceblue;
+ 
+}
+
+
+.info {
+  padding: 10px;
+  width: 70%;
+  margin: 20px  auto;
+  text-align: center;
+  background:floralwhite;
+  border-radius: 10px;
+  border: 1px solid rgb(160, 159, 159);
+}
+
+form *{
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+form{
+  text-align: center;
+  padding-top:20px ;
+  padding-bottom:20px ;
+}
+
+input:not(.btn),textarea{
+  background-color: #f8f9fa;
+  border: 1px solid gray;
+  width: 70%;
+  border-radius: 10px;  
+  margin: 0 auto;
+  padding-right: 20px;
+  font-size: smaller;
+}
+
+textarea{
+  height: 100px;
+}  
+
+label:not(.radio_lbl){
+  width:8em;
+  text-align: right;
+  margin-right: 80px;
+  color: #2b2d2f;
+}
+
+
+h1{
+  margin: 0 auto;
+  background-color:#C70039 ;
+  width: 75%;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  padding: 6px 0;
+  font-size: 25px;
+}
+
+.btn:hover {
+  background-color: #2b2d2f;
+  color: white;
+}
+
+.btn{
+  padding: 15px 60px;
+  border: none;
+  background-color:#C70039 ;
+  color: white;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 15px;
+  transition-duration: 0.4s;
+}
+  
+
+input{
+  margin-top: 20px;
+}
+
+label:not(.radio_lbl),input:not(.btn),textarea{
+  display: block;
+}
+
+select{
+  margin: 10px auto;
+  font-size: medium;
+}
+
+.user_list{
+  display: block;
+}
+
+input[type=radio]{
+  width: 10%;
+  display: inline;
+}
+  
+.small_txt{
+  width: 20% !important; 
+  display: inline !important;
+}
+
+.radio_lbl{
+  margin: 0 auto;
+}
+
+
