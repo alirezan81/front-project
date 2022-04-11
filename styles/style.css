@@ -1,3 +1,10 @@
+@import "theme.css";
+
+:root{
+  --primary: var(--md-sys-color-primary-light);
+  --on-primary: var(--md-sys-color-on-primary-light);
+}
+
 *{
   font-family: vazir, 'iransansmobile', 'B titr';
   font-size: large;
