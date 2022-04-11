@@ -1,0 +1,19 @@
+input[type=file]{
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input{
+    margin-top: 20px;
+}
+  
+input:not(.btn , [type=radio]),textarea{
+    display: block;
+    height: 30px;
+}
+  
+input[type=radio]{
+    width: 10%;
+    display: inline;
+}

@@ -16,8 +16,7 @@
                     unset($_SESSION['info']);
                 }
             ?>
-
-
+            
             <label for="username"> نام کاربری: </label>
             <input type="text" required name="username">           
             

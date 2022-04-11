@@ -14,6 +14,10 @@ if( isset( $_POST['submit'] ) ){
     // if(empty($_FILES['cover'])){
     //     $img_name = $row['cover'];
     // }else{
+        
+    // $FileHandle = fopen("cover/".$row['cover'], 'w') or die("can't open file");
+    // fclose($FileHandle);
+    // unlink("cover/".$row['cover']);
        
     // }
 
@@ -30,9 +34,6 @@ if( isset( $_POST['submit'] ) ){
 
     move_uploaded_file($img_loc,"cover/{$img_name}");
 
-    $FileHandle = fopen("cover/".$row['cover'], 'w') or die("can't open file");
-    fclose($FileHandle);
-    unlink("cover/".$row['cover']);
 
     if($result){
         $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت ویرایش شد!</p></div>";
