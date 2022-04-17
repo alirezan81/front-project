@@ -6,6 +6,7 @@ input:not(.btn),textarea{
     margin: 15px auto;
     padding-right: 20px;
     font-size: smaller;
+    display: block;
 }
   
 textarea{
