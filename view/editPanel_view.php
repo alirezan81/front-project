@@ -1,12 +1,3 @@
-<?php
-
-$dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-$sql = "SELECT * FROM `users`";
-$result = $dbc->query($sql);
-$row = $result->fetchAll();
-$dbc -> close();
-?>
-
 <!DOCTYPE html>
 <html lang="fa-IR">
 <head>
@@ -14,6 +5,7 @@ $dbc -> close();
     <meta name="description" content="users form">
     <title>Users</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
@@ -32,9 +24,21 @@ $dbc -> close();
                 }
                 ?>
             </select>
-            <input class="btn" type="submit" value="حذف کاربر" name="del"> 
-            <input class="btn" type="submit" value="ویرایش کاربر" name="edit">    
-            <input class="btn" type="submit" value="رفرش کاربران" name="ref"> 
+            
+            <button class="btn" type="submit" name="del">
+                <i class="fa-solid fa-user-slash"></i>
+                حذف کاربر
+            </button> 
+
+            <button class="btn" type="submit" name="edit">
+                <i class="fa-solid fa-user-pen"></i>
+                ویرایش کاربر
+            </button> 
+
+            <button class="btn" type="submit" name="ref">
+                <i class="fa-solid fa-user-group"></i>
+                بروزرسانی
+            </button> 
         </form>
 
     </div>

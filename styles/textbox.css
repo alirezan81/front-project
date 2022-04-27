@@ -9,7 +9,11 @@ input:not(.btn),textarea{
     display: block;
 }
   
-textarea{
+textarea, #editor{
     height: 100px;
+    resize: none;
 }  
-  
+
+input:not(.btn , [type=radio]){
+    height: 30px;
+}

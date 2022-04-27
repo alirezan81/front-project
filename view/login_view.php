@@ -5,26 +5,36 @@
     <meta name="description" content="login form">
     <title>Login</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
         <h1>ورود</h1>
-        <form action="" method="post">  
+        <form action="" method="post">
             <?php
                 if(isset($_SESSION['info'])){
                     echo $_SESSION['info'];
                     unset($_SESSION['info']);
                 }
-            ?>            
+            ?>
+
+                
             <label for="email"> ایمیل: </label>
             <input type="email" required name="email">
-
+            
             <label for="password"> رمز عبور: </label>
             <input type="password" required name="password">
-
-            <input class="btn" type="reset" value="پاک کردن"> 
-            <input class="btn" type="submit" value="ورود" name="submit">    
+            
+            <button class="btn" type="submit" name="submit">
+                <i class="fa-solid fa-door-open"></i>
+                ورود
+            </button> 
+            <a href="register.php">عضو نیستی؟ ثبت نام کن</a>    
+            
         </form>
-    </div>      
+
+    </div>
+
+      
 </body>
 </html>

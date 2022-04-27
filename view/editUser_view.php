@@ -1,12 +1,3 @@
-<?php
-$id = $_GET['id'] ?? 0;
-$dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-$sql = "SELECT * FROM `users` WHERE id=?";
-$result = $dbc->query( $sql, $id);
-$row = $result->fetchArray();
-$dbc -> close();
-?>
-
 <!DOCTYPE html>
 <html lang="fa-IR">
 <head>
@@ -14,6 +5,7 @@ $dbc -> close();
     <meta name="description" content="edit form">
     <title>Edit</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
@@ -81,10 +73,11 @@ $dbc -> close();
 
             <label class="radio_lbl" for="level"> مطالعه + انتشار </label>            
             <input type="radio" name="level" value="read-write" <?php if( isset($row['level']) && $row['level'] == 'read-write' ) echo 'checked';?>><br>
-            
-
-            <input class="btn" type="reset" value="پاک کردن"> 
-            <input class="btn" type="submit" value="ویرایش" name="submit">    
+                      
+            <button class="btn" type="submit" name="submit">
+                <i class="fa-solid fa-pen"></i>
+                ویرایش کاربر
+            </button>       
         </form>
 
     </div>

@@ -5,6 +5,7 @@
     <meta name="description" content="add user form">
     <title>AddUser</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
@@ -57,9 +58,16 @@
             <label class="radio_lbl" for="level"> مطالعه + انتشار </label>            
             <input type="radio" name="level" value="read-write"><br>
             
+            <!-- <button class="btn" type="reset">
+                <i class="fa-solid fa-eraser"></i>
+                انصراف و بازگشت
+            </button>  Next Release --> 
 
-            <input class="btn" type="reset" value="پاک کردن"> 
-            <input class="btn" type="submit" value="افزودن" name="submit">    
+            <button class="btn" type="submit" name="submit">
+                <i class="fa-solid fa-user-plus"></i>
+                افزودن کاربر
+            </button> 
+            
         </form>
 
     </div>

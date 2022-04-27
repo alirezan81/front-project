@@ -5,6 +5,7 @@
     <meta name="description" content="register form">
     <title>Register</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
@@ -39,9 +40,11 @@
 
             <label class="radio_lbl" for="gender"> زن </label>
             <input type="radio" name="gender" value="female"><br>     
-
-            <input class="btn" type="reset" value="پاک کردن"> 
-            <input class="btn" type="submit" value="ثبت نام" name="submit">    
+        
+            <button class="btn" type="submit" name="submit">
+                <i class="fa-solid fa-id-card"></i>
+                ثبت نام
+            </button> 
         </form>
 
     </div>

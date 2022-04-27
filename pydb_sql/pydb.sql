@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 17, 2022 at 02:23 PM
+-- Generation Time: Apr 27, 2022 at 11:59 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -37,14 +37,17 @@ CREATE TABLE IF NOT EXISTS `article` (
   `cover` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `state` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL DEFAULT 'saved',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`id`, `writer`, `role`, `subject`, `content`, `cover`, `state`) VALUES
-(2, 'علیرضا نوروزی', 'admin', 'cpython', 'مفسر', 'alireza.jpg', 'published');
+(4, 'محمد بیک', 'admin', 'cpython', '<h1 style=\"text-align: center;\">توابع پایتون</h1>\r\n<h3>map</h3>\r\n<p><code>&gt;&gt;&gt; map(lambda x: x*2 , [1,2,3,4])</code></p>', '32822.jpg', 'saved'),
+(2, 'علیرضا نوروزی', 'admin', 'cpython', 'مفسر', 'alireza.jpg', 'published'),
+(3, 'محمد بیک', 'admin', 'کامپایلر', 'asdasdasdasdasdas', '449787.jpg', 'saved'),
+(5, 'محمد بیک', 'admin', 'فرمت بندی رشته ها', '<h1 style=\"text-align: center;\">فرمت بندی رشته</h1>\r\n<p style=\"text-align: right;\">فرمت بندی پایتون</p>', '32822.jpg', 'saved');
 
 -- --------------------------------------------------------
 
@@ -59,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `title` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `description` text COLLATE utf8mb4_persian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `message`
@@ -67,7 +70,8 @@ CREATE TABLE IF NOT EXISTS `message` (
 
 INSERT INTO `message` (`id`, `email`, `title`, `description`) VALUES
 (2, 'alirezan4279@gmail.com', 'بوستان', 'شماره دانشجویی میخام'),
-(14, 'alirezan4279@gmail.com', 'بوستان', 'انتخاب واحد به درستی انجام نشده');
+(14, 'alirezan4279@gmail.com', 'بوستان', 'انتخاب واحد به درستی انجام نشده'),
+(60, 'alirezan4279@gmail.com', 'پایتون', '55555555555555555');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   `title` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `description` text COLLATE utf8mb4_persian_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `ticket`
@@ -92,7 +96,8 @@ CREATE TABLE IF NOT EXISTS `ticket` (
 
 INSERT INTO `ticket` (`id`, `email`, `fullname`, `section`, `title`, `description`) VALUES
 (1, 'alirezan4279@gmail.com', 'علیرضا نوروزی', 'مجوز', 'مجوز انتشار', 'دسترسی انتشار مقاله را خواستارم'),
-(3, 'alirezan4279@gmail.com', 'علیرضا نوروزی', 'فنی', 'sdadasd', 'asdasdda');
+(3, 'alirezan4279@gmail.com', 'علیرضا نوروزی', 'فنی', 'sdadasd', 'asdasdda'),
+(4, 'mmd85@gmail.com', 'محمد بیک', 'آموزشی', '7777', '8888');
 
 -- --------------------------------------------------------
 
@@ -116,18 +121,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(100) COLLATE utf8mb4_persian_ci DEFAULT 'user',
   `level` varchar(100) COLLATE utf8mb4_persian_ci DEFAULT NULL,
   PRIMARY KEY (`id`,`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `gender`, `age`, `city`, `edu`, `major`, `role`, `level`) VALUES
-(1, 'alirezan81', '1381', 'علیرضا نوروزی', 'alirezan4279@gmail.com', '09010444279', 'male', '19', 'اصفهان', 'مقطع تحصیلی', 'کامپیوتر', 'admin', 'read'),
-(2, 'mmd85', '1385', 'محمد بیک', 'mmd85@gmail.com', '09030796881', 'male', '', '', 'دانش آموز', 'مکاترونیک', 'admin', 'read-write'),
+(1, 'alirezan81', '1381', 'علیرضا نوروزی', 'alirezan4279@gmail.com', '09010444279', 'male', '19', 'اصفهان', 'فوق دیپلم', 'نرم افزار', 'admin', 'read-write'),
+(2, 'mmd85', '1385', 'محمد بیک', 'mmd85@gmail.com', '09030796881', 'male', '16', '', 'دانش آموز', 'مکاترونیک', 'admin', 'read-write'),
 (13, 'maryam64', '1234', 'مریم نوروزی', 'maryamn4073@gmai.com', '09913314073', 'female', NULL, NULL, NULL, NULL, 'user', NULL),
-(7, 'matin8171', '1234', 'متینه قجه بیگ', 'matin8171@gmail.com', '09336478834', 'female', '', '', 'دیپلم', '', 'user', NULL),
-(15, 'mahdigh2980', '1234', 'مهدی قاسمی', 'mahdi.gh200yt@gmail.com', '09162662980', 'male', NULL, NULL, NULL, NULL, 'user', NULL);
+(7, 'matin8171', '1234', 'متینه بیگ', 'matin8171@gmail.com', '09336478834', 'female', '', '', 'دانش آموز', 'مدیريت', 'user', 'read'),
+(15, 'mahdigh2980', '1234', 'مهدی قاسمی', 'mahdi.gh200yt@gmail.com', '09162662980', 'male', '', '', 'دیپلم', 'ریاضی', 'user', NULL),
+(19, 'torabi82', '1234', 'علیرضا ترابی', 'torabi82@gmail.com', '09202664185', 'male', '', '', 'کارشناسی', 'مشاوره فرهنگیان', 'user', 'read'),
+(20, 'pynet81', '1234', 'علی پایتونی', 'alipy81@gmail.com', '09332673954', 'male', '', '', 'مقطع تحصیلی', '', 'admin', 'read-write');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

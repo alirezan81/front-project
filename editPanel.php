@@ -3,7 +3,6 @@ session_start();
 
 include 'config.php';
 include 'lib/db.php';
-include 'view/editPanel_view.php';
 
 if(!empty($_POST['users'])){
     if(isset($_POST['edit'])){ 
@@ -27,5 +26,12 @@ if(!empty($_POST['users'])){
     }
 }
 
+$dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
+$sql = "SELECT * FROM `users`";
+$result = $dbc->query($sql);
+$row = $result->fetchAll();
+$dbc -> close();
+
+include 'view/editPanel_view.php';
 
 ?>

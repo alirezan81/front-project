@@ -4,14 +4,6 @@ input[type=file]{
     margin: 0 auto;
     display: block;
 }
-
-input{
-    margin-top: 20px;
-}
-  
-input:not(.btn , [type=radio]){
-    height: 30px;
-}
   
 input[type=radio]{
     width: 10%;

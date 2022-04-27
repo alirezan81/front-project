@@ -16,11 +16,12 @@
 }
 
 body{
-  background-image: url("pattern.png");
+  background-image: url("box.png");
 }
 
 
-.box{
+
+.box,.info{
   padding: 10px;
   padding-top: 30px;
   width: 40%;
@@ -28,19 +29,12 @@ body{
   text-align: center;
   border-radius: 10px;
   border: 1px solid rgb(160, 159, 159);
-  background-color: var(--box);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  /* background-color: var(--box);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
-
-.info {
-  padding: 10px;
-  width: 70%;
-  margin: 20px  auto;
-  text-align: center;
-  background:floralwhite;
-  border-radius: 10px;
-  border: 1px solid rgb(160, 159, 159);
+.info{
+  width: 60%;
 }
 
 form *{
@@ -101,5 +95,9 @@ select{
   border-radius: 5px;
   width: 150px;
   height:150px;
+}
+
+a{
+  text-decoration: none;
 }
 

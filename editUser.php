@@ -3,11 +3,16 @@ session_start();
 
 include 'config.php';
 include 'lib/db.php';
-include 'view/editUser_view.php';
+
+$id = $_SESSION['uid'] ?? $_GET['id'] ?? 0;
+$dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
+$sql = "SELECT * FROM `users` WHERE id=?";
+$result = $dbc->query( $sql, $id);
+$row = $result->fetchArray();
+
 
 if( isset( $_POST['submit'] ) ){
 
-    $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
     if($_POST['password'] == ""){
         $password = $row['password'];
     }else{
@@ -30,7 +35,9 @@ if( isset( $_POST['submit'] ) ){
         header("Location: editUser.php");
     }
 
-    }
-
+}else{
+    include 'view/editUser_view.php';
+}
+$dbc -> close();
 
 ?>

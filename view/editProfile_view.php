@@ -1,12 +1,3 @@
-<?php
-$id = $_GET['id'] ?? 0;
-$dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-$sql = "SELECT * FROM `users` WHERE id=?";
-$result = $dbc->query( $sql, $id);
-$row = $result->fetchArray();
-$dbc -> close();
-?>
-
 <!DOCTYPE html>
 <html lang="fa-IR">
 <head>
@@ -14,6 +5,7 @@ $dbc -> close();
     <meta name="description" content="edit form">
     <title>Edit</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
@@ -52,7 +44,7 @@ $dbc -> close();
             <input type="number" name="age" min="15" max="40" value="<?php if(isset($row['age'])) echo $row['age']; ?>">
           
             
-            <label for="city"> شهر: </label>
+            <label for="city">شهر:</label>
             <input type="text" name="city" value="<?php if(isset($row['city']) ) echo $row['city']; ?>">
 
             <label for="edu"> تحصیلات: </label>
@@ -63,10 +55,12 @@ $dbc -> close();
                 }
                 ?>
             </select>
-            <input class="small_txt" placeholder="رشته تحصیلی" type="text" name="major" value="<?php if(isset($row['major']) ) echo $row['major']; ?>"> <br>
-
-            <input class="btn" type="reset" value="پاک کردن"> 
-            <input class="btn" type="submit" value="ویرایش" name="submit">    
+            <input class="small_txt" placeholder="رشته تحصیلی" type="text" name="major" value="<?php if(isset($row['major']) ) echo $row['major']; ?>"><br>
+ 
+            <button class="btn" type="submit" name="submit">
+                <i class="fa-solid fa-pen"></i>
+                ویرایش
+            </button>     
         </form>
 
     </div>

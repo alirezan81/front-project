@@ -3,7 +3,13 @@ session_start();
 
 include 'config.php';
 include 'lib/db.php';
-include 'view/editPost_view.php';
+
+
+$id = $_SESSION['postid'] ?? $_GET['id'] ?? 0;
+$dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
+$sql = "SELECT * FROM `article` WHERE id=?";
+$result = $dbc->query( $sql, $id);
+$row = $result->fetchArray();
 
 
 if( isset( $_POST['submit'] ) ){
@@ -21,8 +27,6 @@ if( isset( $_POST['submit'] ) ){
        
     // }
 
-
-    $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
     $sql = "UPDATE `article` SET subject=?,content=?,
     cover=?,state=? WHERE id=?";
 
@@ -42,4 +46,11 @@ if( isset( $_POST['submit'] ) ){
         $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
         header("Location: editPost.php?id={$id}");
     }
+
+}else{
+    include 'view/editPost_view.php';
 }
+
+$dbc -> close();
+
+?>

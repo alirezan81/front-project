@@ -5,6 +5,7 @@
     <meta name="description" content="Ticket form">
     <title>SendTiket</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
     <div class="box">
@@ -27,12 +28,13 @@
             <label for="title"> موضوع: </label>
             <input type="text" required name="title">
 
-
             <label for="description"> توضیحات: </label>
-            <textarea name="description" required></textarea>  
-            <input class="btn" type="reset" value="پاک کردن"> 
-            <input class="btn" type="submit" value="ارسال" name="submit"> 
-                        
+            <textarea name="description" required></textarea> 
+             
+            <button class="btn" type="submit" name="submit">
+                <i class="fa-solid fa-paper-plane"></i>
+                ارسال
+            </button>  
         </form>
 
     </div>

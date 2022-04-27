@@ -5,9 +5,10 @@ include 'config.php';
 include 'lib/db.php';
 include 'view/addPost_view.php';
 
-$id = $_GET['id'] ?? 0;
+$id = $_SESSION['uid'] ?? $_GET['id'] ?? 0;
 
 if( isset( $_POST['submit'] ) ){
+    var_dump( $_POST['content'] );
 
     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
 
@@ -37,4 +38,6 @@ if( isset( $_POST['submit'] ) ){
         $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
         header("Location: addPost.php");
     }
+
+
 }
