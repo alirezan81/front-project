@@ -1,7 +1,8 @@
 <?php
-include 'security.php';
+
 include 'config.php';
 include 'lib/db.php';
+include 'security.php';
 include 'view/login_view.php';
 
 if(Authentication :: check()){
@@ -15,11 +16,11 @@ if( isset( $_POST['submit'] ) ){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT id FROM `users` WHERE email=? AND password=?";
+    $sql = "SELECT * FROM `users` WHERE email=? AND password=?";
     $result = $dbc->query( $sql,$email,$password );
     
     if ($row = $result->fetchArray()){
-        Authentication :: login( $row['id'] );
+        Authentication :: login($row);
         header("Location: editProfile.php");
         $dbc -> close();
     }else{

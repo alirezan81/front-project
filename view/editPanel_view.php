@@ -34,11 +34,6 @@
                 <i class="fa-solid fa-user-pen"></i>
                 ویرایش کاربر
             </button> 
-
-            <button class="btn" type="submit" name="ref">
-                <i class="fa-solid fa-user-group"></i>
-                بروزرسانی
-            </button> 
         </form>
 
     </div>

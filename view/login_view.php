@@ -28,7 +28,7 @@
             <button class="btn" type="submit" name="submit">
                 <i class="fa-solid fa-door-open"></i>
                 ورود
-            </button> 
+            </button><br>
             <a href="register.php">عضو نیستی؟ ثبت نام کن</a>    
             
         </form>

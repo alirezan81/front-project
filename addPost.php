@@ -1,43 +1,49 @@
 <?php
-session_start();
 
 include 'config.php';
 include 'lib/db.php';
+include 'security.php';
 include 'view/addPost_view.php';
 
-$id = $_SESSION['uid'] ?? $_GET['id'] ?? 0;
 
-if( isset( $_POST['submit'] ) ){
-    var_dump( $_POST['content'] );
 
-    $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
+if(!Authorization::checkAccess()){
+    header("Location: showPosts.php");  
+}else{
+    $id = Authentication::uid();
 
-    $sql = "SELECT fullname,role FROM `users` WHERE id=?";
-    $result = $dbc->query( $sql, $id);
-    $row = $result->fetchArray();
+    if( isset( $_POST['submit'] ) ){
 
+        $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
     
-    $img_loc = $_FILES['cover']['tmp_name'];
-    $img_name = $_FILES['cover']['name'];
-
-
-    $sql = "INSERT INTO article(writer,role,subject,content,cover,state) 
-    VALUES(?,?,?,?,?,?)";
-
-    $result = $dbc -> query( $sql, $row['fullname'], $row['role'], $_POST['subject'],
-    $_POST['content'], $img_name, $_POST['state']);
-
-    $dbc -> close();
-
-    move_uploaded_file($img_loc,"cover/{$img_name}");
-
-    if($result){
-        $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت افزوده شد!</p></div>";
-        header("Location: addPost.php");
-    }else{
-        $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-        header("Location: addPost.php");
+        $sql = "SELECT fullname,role FROM `users` WHERE id=?";
+        $result = $dbc->query( $sql, $id);
+        $row = $result->fetchArray();
+    
+        
+        $img_loc = $_FILES['cover']['tmp_name'];
+        $img_name = $_FILES['cover']['name'];
+    
+    
+        $sql = "INSERT INTO article(writer,role,subject,content,cover,state) 
+        VALUES(?,?,?,?,?,?)";
+    
+        $result = $dbc -> query( $sql, $row['fullname'], $row['role'], $_POST['subject'],
+        $_POST['content'], $img_name, $_POST['state']);
+    
+        $dbc -> close();
+    
+        move_uploaded_file($img_loc,"cover/{$img_name}");
+    
+        if($result){
+            $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت افزوده شد!</p></div>";
+            header("Location: addPost.php");
+        }else{
+            $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
+            header("Location: addPost.php");
+        }
+    
+    
     }
-
-
 }
+

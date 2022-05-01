@@ -16,7 +16,7 @@
 }
 
 body{
-  background-image: url("box.png");
+  background-image: url("pattern.png");
 }
 
 
@@ -29,8 +29,6 @@ body{
   text-align: center;
   border-radius: 10px;
   border: 1px solid rgb(160, 159, 159);
-  /* background-color: var(--box);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
 }
 
 .info{
