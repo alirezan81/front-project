@@ -5,7 +5,7 @@ include 'lib/db.php';
 include 'security.php';
 
 if( !(Authorization::checkAccess() && isset($_GET['id'])) ){
-    header("Location: showPosts.php");  
+    header("Location: catalog.php");  
 }else{
     $id = $_GET['id'] ?? 0;
     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);

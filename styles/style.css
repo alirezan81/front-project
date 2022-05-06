@@ -2,6 +2,7 @@
 @import "button.css";
 @import "textbox.css";
 @import "input.css";
+@import "table.css";
 
 
 :root{
@@ -12,7 +13,7 @@
 
 *{
   font-family: vazir, 'iransansmobile', 'B titr';
-  font-size: large;
+  font-size: 16px;
 }
 
 body{
@@ -33,11 +34,6 @@ body{
 
 .info{
   width: 60%;
-}
-
-form *{
-  vertical-align: middle;
-  margin-top: 10px;
 }
 
 form{

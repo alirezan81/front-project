@@ -14,5 +14,5 @@
     $posts = $dbc -> fetchAll();
     $dbc -> close();
 
-    include 'view/showPosts_view.php'
+    include 'view/catalog_view.php';
 ?>

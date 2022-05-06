@@ -8,7 +8,7 @@ include 'security.php';
 if(!Authorization::checkRole()){
     header("Location: editProfile.php");
 }elseif(!isset($_GET['id'])){
-    header("Location: editPanel.php");
+    header("Location: users.php");
 }else{
 
     $id = $_GET['id'];

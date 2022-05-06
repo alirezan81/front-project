@@ -8,7 +8,7 @@ include 'view/addPost_view.php';
 
 
 if(!Authorization::checkAccess()){
-    header("Location: showPosts.php");  
+    header("Location: catalog.php");  
 }else{
     $id = Authentication::uid();
 

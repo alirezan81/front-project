@@ -8,7 +8,7 @@ if(!Authentication::check()){
     header("Location: login.php");
 }else{
     Authentication::logout();
-    header("Location: showPosts.php");
+    header("Location: catalog.php");
 }
 
 ?>

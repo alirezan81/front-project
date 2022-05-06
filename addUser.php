@@ -5,7 +5,7 @@ include 'security.php';
 include 'view/addUser_view.php';
 
 if(!Authorization::checkRole()){
-    header("Location: showPosts.php");
+    header("Location: catalog.php");
 }else{
     if( isset( $_POST['submit'] ) ){
 

@@ -11,16 +11,19 @@
 <body dir="rtl">
     <div class="info">
         <h1>تنقلات پایتونی</h1>
-        <?php
-            if( count( $posts ) == 0 ){
-                echo '<p>مقاله ای یافت نشد</p>';
-            }
-            else{
-                foreach( $posts as $row ){              
-                    include 'view/template/card.php';
+        <div class="grid grid-3" style="dir">       
+            <?php
+                if( count( $posts ) == 0 ){
+                    echo '<p>مقاله ای یافت نشد</p>';
                 }
-            }
-        ?>
+                else{
+                    foreach( $posts as $row ){              
+                        include 'view/template/card.php';
+                    }
+                }
+            ?>
+        </div>
+       
     </div>
    
 </body>
