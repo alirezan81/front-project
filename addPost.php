@@ -16,19 +16,15 @@ if(!Authorization::checkAccess()){
 
         $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
     
-        $sql = "SELECT fullname,role FROM `users` WHERE id=?";
-        $result = $dbc->query( $sql, $id);
-        $row = $result->fetchArray();
-    
         
         $img_loc = $_FILES['cover']['tmp_name'];
         $img_name = $_FILES['cover']['name'];
     
     
-        $sql = "INSERT INTO article(writer,role,subject,content,cover,state) 
-        VALUES(?,?,?,?,?,?)";
+        $sql = "INSERT INTO article(writer,subject,content,cover,state) 
+        VALUES(?,?,?,?,?)";
     
-        $result = $dbc -> query( $sql, $row['fullname'], $row['role'], $_POST['subject'],
+        $result = $dbc -> query( $sql, $id, $_POST['subject'],
         $_POST['content'], $img_name, $_POST['state']);
     
         $dbc -> close();
