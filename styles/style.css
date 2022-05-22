@@ -8,7 +8,7 @@
 :root{
   --primary: var(--md-sys-color-primary-light);
   --on-primary: var(--md-sys-color-on-primary-light);
-  --box: --md-sys-color-on-background-dark;
+  --box: var(--md-sys-color-background-light);
 }
 
 *{
@@ -22,19 +22,27 @@ body{
 
 
 
-.box,.info{
+.box{
   padding: 10px;
   padding-top: 30px;
-  width: 40%;
   margin: 20px  auto;
   text-align: center;
   border-radius: 10px;
   border: 1px solid rgb(160, 159, 159);
 }
 
-.info{
+.box.small{
+  width: 40%;
+}
+
+.box.medium{
   width: 60%;
 }
+
+.box.large{
+  width: 80%;
+}
+
 
 form{
   text-align: center;
