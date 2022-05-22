@@ -16,8 +16,8 @@ if( isset( $_POST['submit'] ) ){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM `users` WHERE email=? AND password=?";
-    $result = $dbc->query( $sql,$email,$password );
+    $sql = "SELECT * FROM `users` WHERE email=? AND password=? AND status=?";
+    $result = $dbc->query( $sql,$email,$password,'normal' );
     
     if ($row = $result->fetchArray()){
         Authentication :: login($row);
