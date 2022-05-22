@@ -11,8 +11,9 @@ if(!Authorization::checkRole()){
     if(isset($_POST['del'])){  // for group acction next releases
     
         $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-        $sql = "DELETE FROM `users`  WHERE `id`=?";
-        $result = $dbc->query( $sql,$_POST['users'] );
+        $sql = "UPDATE `users` SET status=? WHERE `id`=?";
+        
+        $result = $dbc->query( $sql,'deleted',$_POST['users_id'] );
         
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت حذف شد!</p></div>";
@@ -25,8 +26,8 @@ if(!Authorization::checkRole()){
     
     
     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-    $sql = "SELECT * FROM `users`";
-    $result = $dbc->query($sql);
+    $sql = "SELECT * FROM `users` WHERE `status`=?";
+    $result = $dbc->query($sql,'normal');
     $row = $result->fetchAll();
     $dbc -> close();
     
