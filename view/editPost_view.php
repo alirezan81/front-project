@@ -14,7 +14,7 @@
     </script>
 </head>
 <body dir="rtl">
-    <div class="info">
+    <div class="box medium">
         <h1>ویرایش مقاله جدید</h1>
         <form action="" method="post" enctype="multipart/form-data">
             <?php
@@ -39,7 +39,7 @@
             <input type="radio" name="state" value="published" <?php if( isset($row['state']) && $row['state'] == 'published' ) echo 'checked';?>><br>
 
             <label for="cover"> کاور پست: </label>
-            <input type="file" name="cover" required>
+            <input type="file" name="cover">
             
             <img class="cover" src="cover/<?php if(isset($row['cover']) ) echo $row['cover']; ?>" alt="تصویر کاور">
             
