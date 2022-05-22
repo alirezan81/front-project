@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
-    <div class="box">
+    <div class="box small">
         <h1>ثبت نام</h1>
         <form action="" method="post">
             <?php
@@ -44,7 +44,8 @@
             <button class="btn" type="submit" name="submit">
                 <i class="fa-solid fa-id-card"></i>
                 ثبت نام
-            </button> 
+            </button><br>
+            <a href="login.php">قبلا ثبت نام کردی؟ وارد شو!</a>     
         </form>
 
     </div>
