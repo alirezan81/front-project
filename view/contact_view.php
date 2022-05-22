@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
-    <div class="box">
+    <div class="box small">
         <h1>تماس با ما</h1>
         <form action="" method="post">
                 <?php
