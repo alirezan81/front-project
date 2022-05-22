@@ -14,7 +14,7 @@
     </script>
 </head>
 <body dir="rtl">
-    <div class="info">
+    <div class="box medium">
         <h1>افزودن مقاله جدید</h1>
         <form action="" method="post" enctype="multipart/form-data">
             <?php
