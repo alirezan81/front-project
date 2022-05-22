@@ -28,9 +28,8 @@ if(!Authorization::checkRole()){
     $sql = "SELECT * FROM `article`";
     $result = $dbc->query($sql);
     $row = $result->fetchAll();
-    $dbc -> close();
-    
     include 'view/posts_view.php';
+    $dbc -> close();
 }
 
 
