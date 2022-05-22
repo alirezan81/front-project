@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
-    <div class="info">
+    <div class="box large">
         <h1>مقاله ها</h1>
         <form action="" method="post">
             <?php
@@ -32,6 +32,9 @@
                     <tbody>
 
                         <?php foreach($row as $post){ 
+                            $sql = "SELECT role,fullname FROM users WHERE id=?";
+                            $result = $dbc -> query( $sql ,$post['writer']);
+                            $writer = $result->fetchArray();
                             include 'view/template/postsTable.php';
                         }?>     
                     </tbody>
