@@ -13,20 +13,20 @@ if( !(Authorization::checkAccess() && isset($_GET['id'])) ){
     $result = $dbc->query( $sql, $id);
     $row = $result->fetchArray();
 
+
     if( isset( $_POST['submit'] ) ){
 
-        $img_loc = $_FILES['cover']['tmp_name']; 
-        $img_name = $_FILES['cover']['name'];
-        
-        // if(empty($_FILES['cover'])){
-        //     $img_name = $row['cover'];
-        // }else{
-            
-        // $FileHandle = fopen("cover/".$row['cover'], 'w') or die("can't open file");
-        // fclose($FileHandle);
-        // unlink("cover/".$row['cover']);
-           
-        // }
+        if(!(isset($_FILES['cover']['name']) && !empty($_FILES['cover']['name']))){           
+            $img_name = $row['cover'];
+        }else{
+            $img_loc = $_FILES['cover']['tmp_name']; 
+            $img_name = $_FILES['cover']['name'];
+
+            $FileHandle = fopen("cover/".$row['cover'], 'w') or die("can't open file");
+            fclose($FileHandle);
+            unlink("cover/".$row['cover']);
+        }
+
     
         $sql = "UPDATE `article` SET subject=?,content=?,
         cover=?,state=? WHERE id=?";
