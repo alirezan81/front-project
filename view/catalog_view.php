@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
-    <div class="info">
+    <div class="box medium">
         <h1>تنقلات پایتونی</h1>
         <div class="grid grid-3" style="dir">       
             <?php
@@ -17,7 +17,12 @@
                     echo '<p>مقاله ای یافت نشد</p>';
                 }
                 else{
-                    foreach( $posts as $row ){              
+                    foreach( $posts as $row ){
+
+                        $sql = "SELECT fullname,role FROM users WHERE id=?";
+                        $result = $dbc -> query( $sql ,$row['writer']);
+                        $writer = $result->fetchArray();
+                             
                         include 'view/template/card.php';
                     }
                 }
