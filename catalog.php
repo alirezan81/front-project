@@ -12,7 +12,10 @@
 
     $result = $dbc -> query( $sql , "published");
     $posts = $dbc -> fetchAll();
-    $dbc -> close();
+
+
 
     include 'view/catalog_view.php';
+
+    $dbc -> close();
 ?>
