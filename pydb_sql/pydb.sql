@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 06, 2022 at 09:12 AM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Host: 127.0.0.1
+-- Generation Time: May 28, 2022 at 08:02 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,29 +27,26 @@ SET time_zone = "+00:00";
 -- Table structure for table `article`
 --
 
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE IF NOT EXISTS `article` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `writer` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
-  `role` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
+CREATE TABLE `article` (
+  `id` int(11) NOT NULL,
+  `writer` int(11) NOT NULL,
   `subject` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `content` text COLLATE utf8mb4_persian_ci NOT NULL,
   `cover` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
-  `state` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL DEFAULT 'saved',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+  `state` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL DEFAULT 'saved'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id`, `writer`, `role`, `subject`, `content`, `cover`, `state`) VALUES
-(4, 'علیرضا ترابی', 'user', 'kivy', '<h1 style=\"text-align: center;\">توابع پایتون</h1>\r\n<h3>map</h3>\r\n<p><code>&gt;&gt;&gt; map(lambda x: x*2 , [1,2,3,4])</code></p>', 'Kivy-Tutorial_Watermarked.webp', 'published'),
-(6, 'علیرضا نوروزی', 'admin', 'کلاس و آبجکت', '', 'sc2vn.jpg', 'published'),
-(5, 'محمد بیک', 'user', 'پایتون فور اندروید', '<h1 style=\"text-align: center;\">پایتون فور اندروید</h1>\r\n<p style=\"text-align: right;\">فرمت بندی پایتون</p>', 'p4a.png', 'published'),
-(7, 'علیرضا نوروزی', 'admin', 'Cpython', '', 'py.jpg', 'published'),
-(8, 'علیرضا نوروزی', 'admin', 'preload ها', '', 'Kivy_showcase_screenshot.jpg', 'published'),
-(10, 'علیرضا نوروزی', 'admin', 'طراحی ریسپانسیو', '', 'barly_homescreen_palate_beer.png', 'published');
+INSERT INTO `article` (`id`, `writer`, `subject`, `content`, `cover`, `state`) VALUES
+(4, 1, 'Functions', '<h1 style=\"text-align: center;\">توابع پایتون</h1>\r\n<h3>map</h3>\r\n<p><code>&gt;&gt;&gt; map(lambda x: x*2 , [1,2,3,4])</code></p>', 'fun-py.jpg', 'published'),
+(6, 7, 'Common Errors', '<h2 style=\"text-align: center;\">خطا های رایج در پایتون</h2>', 'error-py.png', 'published'),
+(5, 19, 'Map & Filter & Reduce', '<h1 style=\"text-align: center;\">Map &amp; Filter &amp; Reduce</h1>\r\n<p style=\"text-align: right;\">فرمت بندی پایتون</p>', 'mfr-py.png', 'published'),
+(7, 1, 'Cpython', '<p style=\"text-align: center;\">یکی از مفسر های پایتون</p>', 'cython_logo.webp', 'published'),
+(8, 20, 'List Comprehension', '<h2 style=\"text-align: center;\">خلاصه لیست یا لیست ساز</h2>', 'lc-py.png', 'published'),
+(10, 13, 'F-String', '<h2 style=\"text-align: center;\">فرمت بندی رشته ها با f-string</h2>', 'fs-py.png', 'published');
 
 -- --------------------------------------------------------
 
@@ -57,14 +54,12 @@ INSERT INTO `article` (`id`, `writer`, `role`, `subject`, `content`, `cover`, `s
 -- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `message`;
-CREATE TABLE IF NOT EXISTS `message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `message` (
+  `id` int(11) NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
-  `description` text COLLATE utf8mb4_persian_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+  `description` text COLLATE utf8mb4_persian_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `message`
@@ -81,26 +76,23 @@ INSERT INTO `message` (`id`, `email`, `title`, `description`) VALUES
 -- Table structure for table `ticket`
 --
 
-DROP TABLE IF EXISTS `ticket`;
-CREATE TABLE IF NOT EXISTS `ticket` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
-  `fullname` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
+CREATE TABLE `ticket` (
+  `id` int(11) NOT NULL,
+  `sender` int(11) NOT NULL,
   `section` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
-  `description` text COLLATE utf8mb4_persian_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+  `description` text COLLATE utf8mb4_persian_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`id`, `email`, `fullname`, `section`, `title`, `description`) VALUES
-(1, 'alirezan4279@gmail.com', 'علیرضا نوروزی', 'مجوز', 'مجوز انتشار', 'دسترسی انتشار مقاله را خواستارم'),
-(3, 'alirezan4279@gmail.com', 'علیرضا نوروزی', 'فنی', 'sdadasd', 'asdasdda'),
-(4, 'mmd85@gmail.com', 'محمد بیک', 'آموزشی', '7777', '8888'),
-(5, 'alirezan4279@gmail.com', 'علیرضا نوروزی', 'فنی', 'مهاجر', 'کلاس های حضوری');
+INSERT INTO `ticket` (`id`, `sender`, `section`, `title`, `description`) VALUES
+(1, 7, 'مجوز', 'مجوز انتشار', 'دسترسی انتشار مقاله را خواستارم'),
+(3, 7, 'فنی', 'sdadasd', 'asdasdda'),
+(4, 13, 'آموزشی', '7777', '8888'),
+(5, 1, 'فنی', 'مهاجر', 'کلاس های حضوری');
 
 -- --------------------------------------------------------
 
@@ -108,9 +100,8 @@ INSERT INTO `ticket` (`id`, `email`, `fullname`, `section`, `title`, `descriptio
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `username` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `password` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `fullname` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
@@ -123,19 +114,75 @@ CREATE TABLE IF NOT EXISTS `users` (
   `major` varchar(100) COLLATE utf8mb4_persian_ci DEFAULT NULL,
   `role` varchar(100) COLLATE utf8mb4_persian_ci DEFAULT 'user',
   `level` varchar(100) COLLATE utf8mb4_persian_ci DEFAULT NULL,
-  PRIMARY KEY (`id`,`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
+  `status` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL DEFAULT 'normal'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `gender`, `age`, `city`, `edu`, `major`, `role`, `level`) VALUES
-(1, 'alirezan81', '1381', 'علیرضا نوروزی', 'alirezan4279@gmail.com', '09010444279', 'male', '20', 'اصفهان', 'فوق دیپلم', 'نرم افزار', 'admin', 'read-write'),
-(13, 'maryam64', '1234', 'مریم نوروزی', 'maryamn4073@gmai.com', '09913314073', 'female', '', '', 'مقطع تحصیلی', '', 'user', 'read'),
-(7, 'matin8171', '1234', 'متینه بیگ', 'matin8171@gmail.com', '09336478834', 'female', '19', 'گلپایگان', 'دیپلم', 'مدیريت', 'user', 'read'),
-(19, 'torabi82', '1234', 'علیرضا ترابی', 'torabi82@gmail.com', '09202664185', 'male', '', '', 'کارشناسی', 'مشاوره فرهنگیان', 'user', 'read'),
-(20, 'pynet81', '1234', 'علی پایتونی', 'alipy81@gmail.com', '09332673954', 'male', '', '', 'مقطع تحصیلی', '', 'admin', 'read-write');
+INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `email`, `phone`, `gender`, `age`, `city`, `edu`, `major`, `role`, `level`, `status`) VALUES
+(1, 'alirezan81', '1381', 'علیرضا نوروزی', 'alirezan4279@gmail.com', '09010444279', 'male', '20', 'اصفهان', 'فوق دیپلم', 'نرم افزار', 'admin', 'read-write', 'normal'),
+(13, 'maryam64', '1234', 'مریم نوروزی', 'maryamn4073@gmai.com', '09913314073', 'female', '', '', 'مقطع تحصیلی', '', 'user', 'read', 'normal'),
+(7, 'matin8171', '1234', 'متینه بیگ', 'matin8171@gmail.com', '09336478834', 'female', '19', 'گلپایگان', 'دیپلم', 'مدیريت', 'user', 'read', 'normal'),
+(19, 'torabi82', '1234', 'علیرضا ترابی', 'torabi82@gmail.com', '09202664185', 'male', '', '', 'کارشناسی', 'مشاوره فرهنگیان', 'user', 'read', 'normal'),
+(20, 'pynet81', '1234', 'علی پایتونی', 'alipy81@gmail.com', '09332673954', 'male', '', '', 'مقطع تحصیلی', '', 'admin', 'read-write', 'ban');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ticket`
+--
+ALTER TABLE `ticket`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`,`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `article`
+--
+ALTER TABLE `article`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT for table `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
