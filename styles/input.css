@@ -6,7 +6,7 @@ input[type=file]{
 }
   
 input[type=radio]{
-    width: 10%;
+    width: 7%;
     display: inline;
 }
 

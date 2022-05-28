@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2022 at 08:02 PM
+-- Generation Time: May 28, 2022 at 09:51 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -32,6 +32,7 @@ CREATE TABLE `article` (
   `writer` int(11) NOT NULL,
   `subject` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `content` text COLLATE utf8mb4_persian_ci NOT NULL,
+  `time` int(11) NOT NULL,
   `cover` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL,
   `state` varchar(100) COLLATE utf8mb4_persian_ci NOT NULL DEFAULT 'saved'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
@@ -40,13 +41,13 @@ CREATE TABLE `article` (
 -- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id`, `writer`, `subject`, `content`, `cover`, `state`) VALUES
-(4, 1, 'Functions', '<h1 style=\"text-align: center;\">توابع پایتون</h1>\r\n<h3>map</h3>\r\n<p><code>&gt;&gt;&gt; map(lambda x: x*2 , [1,2,3,4])</code></p>', 'fun-py.jpg', 'published'),
-(6, 7, 'Common Errors', '<h2 style=\"text-align: center;\">خطا های رایج در پایتون</h2>', 'error-py.png', 'published'),
-(5, 19, 'Map & Filter & Reduce', '<h1 style=\"text-align: center;\">Map &amp; Filter &amp; Reduce</h1>\r\n<p style=\"text-align: right;\">فرمت بندی پایتون</p>', 'mfr-py.png', 'published'),
-(7, 1, 'Cpython', '<p style=\"text-align: center;\">یکی از مفسر های پایتون</p>', 'cython_logo.webp', 'published'),
-(8, 20, 'List Comprehension', '<h2 style=\"text-align: center;\">خلاصه لیست یا لیست ساز</h2>', 'lc-py.png', 'published'),
-(10, 13, 'F-String', '<h2 style=\"text-align: center;\">فرمت بندی رشته ها با f-string</h2>', 'fs-py.png', 'published');
+INSERT INTO `article` (`id`, `writer`, `subject`, `content`, `time`, `cover`, `state`) VALUES
+(4, 1, 'Functions', '<h1 style=\"text-align: center;\">توابع پایتون</h1>\r\n<h3>map</h3>\r\n<p><code>&gt;&gt;&gt; map(lambda x: x*2 , [1,2,3,4])</code></p>', 12, 'fun-py.jpg', 'published'),
+(6, 7, 'Common Errors', '<h2 style=\"text-align: center;\">خطا های رایج در پایتون</h2>', 10, 'error-py.png', 'published'),
+(5, 19, 'Map & Filter & Reduce', '<h1 style=\"text-align: center;\">Map &amp; Filter &amp; Reduce</h1>\r\n<p style=\"text-align: right;\">فرمت بندی پایتون</p>', 20, 'mfr-py.png', 'published'),
+(7, 1, 'Cpython', '<p style=\"text-align: center;\">یکی از مفسر های پایتون</p>', 20, 'cython_logo.webp', 'published'),
+(8, 20, 'List Comprehension', '<h2 style=\"text-align: center;\">خلاصه لیست یا لیست ساز</h2>', 15, 'lc-py.png', 'published'),
+(10, 13, 'F-String', '<h2 style=\"text-align: center;\">فرمت بندی رشته ها با f-string</h2>', 10, 'fs-py.png', 'published');
 
 -- --------------------------------------------------------
 

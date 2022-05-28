@@ -49,12 +49,16 @@ form{
   padding-top:20px ;
   padding-bottom:20px ;
 }
+
+form > *{
+  margin-top: 10px;
+}
   
 
 label:not(.radio_lbl){
   width:15em;
   text-align: right;
-  margin-right: 80px;
+  margin-right: 12%;
   color: #2b2d2f;
   display: block;
 }

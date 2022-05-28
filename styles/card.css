@@ -32,15 +32,15 @@ a{
 }
 
 .card.evelated{
-    color: var(--on-surface);
-    background-color: #fffbfe;
+    color: var(--surface);
+    background-color: var(--on-surface);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);  
 }
 
 .card.evelated:hover{
-    color: var(--surface);
+    color: var(--on-surface);
+    background-color: #fffbfe;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 25px 0 rgba(0, 0, 0, 0.19);
-    background-color: var(--on-surface);
     cursor: pointer;
 }
 

@@ -28,10 +28,18 @@
             <input type="text" required name="subject" value="<?php if(isset($row['subject']) ) echo $row['subject']; ?>">
 
 
-            <label for="content"> محتوا: </label>
             <textarea name="content" id="editor"><?php if(isset($row['content']) ) echo $row['content']; ?></textarea>  
 
-            <label for="state"> (مخصوص ادمین)وضعیت: </label>
+            <br>
+
+            <label for="time"> زمان پیشنهادی مطالعه: </label>
+            <input type="number" required name="time" 
+                placeholder="مثال: 10 دقیقه" style="width:20%;"
+                value="<?php if(isset($row['time']) ) echo $row['time']; ?>"
+            >
+
+            <br>
+
             <label class="radio_lbl" for="state"> ذخیره </label>            
             <input type="radio" name="state" value="saved" <?php if( isset($row['state']) && $row['state'] == 'saved' ) echo 'checked';?>>
 

@@ -28,10 +28,16 @@
             <input type="text" required name="subject">
 
 
-            <label for="content"> محتوا: </label>
+            
             <textarea name="content" id="editor"></textarea>  
 
-            <label for="state"> (مخصوص ادمین)وضعیت: </label>
+            <br>
+
+            <label for="time"> زمان پیشنهادی مطالعه: </label>
+            <input type="number" required name="time" placeholder="مثال: 10 دقیقه" style="width:20%;">
+            
+            <br>
+
             <label class="radio_lbl" for="state"> ذخیره </label>            
             <input type="radio" name="state" value="saved" checked>
 
