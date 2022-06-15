@@ -9,7 +9,7 @@
 
 
 
-<body dir="rtl" class="grid grid-layout grid-1">
+<body dir="rtl" class="grid grid-2">
     <?php
 
         ob_start();
@@ -18,10 +18,8 @@
         include 'lib/db.php';
         include 'security.php';
 
-        
-        include "view/template/header.php";
 
-        echo "<p class='menu-icon'>**</p>";
+        include "view/template/header.php";
         include "view/template/nav.php";
 
 
