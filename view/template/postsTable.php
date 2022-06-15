@@ -11,7 +11,7 @@
             <i class="fa-solid fa-trash"></i>
         </a> 
 
-        <a class="" href="editPost.php? id=<?php echo $post['id'] ?>">
+        <a class="" href="index.php?p=editPost&id=<?php echo $post['id'] ?>">
             <i class="fa-solid fa-file-pen"></i>
         </a>       
     </td>

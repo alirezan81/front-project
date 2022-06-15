@@ -1,11 +1,8 @@
 <?php
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
 include 'view/addUser_view.php';
 
 if(!Authorization::checkRole()){
-    header("Location: catalog.php");
+    header("Location: index.php");
 }else{
     if( isset( $_POST['submit'] ) ){
 
@@ -27,10 +24,10 @@ if(!Authorization::checkRole()){
     
             if($result){
                 $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت ثبت نام شد!</p></div>";
-                header("Location: addUser.php");
+                header("Location: index.php?p=addUser");
             }else{
                 $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-                header("Location: addUser.php");
+                header("Location: index.php?p=addUser");
             }
     
         }else{

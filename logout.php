@@ -5,10 +5,10 @@ include 'lib/db.php';
 include 'security.php';
 
 if(!Authentication::check()){
-    header("Location: login.php");
+    header("Location: index.php?p=login");
 }else{
     Authentication::logout();
-    header("Location: catalog.php");
+    header("Location: index.php");
 }
 
 ?>

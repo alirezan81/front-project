@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="edit article form">
     <title>Edit Article</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
     <script src="https://cdn.tiny.cloud/1/2qbo3d4rvp07khokrrfh5f207e3cp1deao5n3r91xlo85avk/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>

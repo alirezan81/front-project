@@ -1,14 +1,9 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
 include 'view/addPost_view.php';
 
-
-
 if(!Authorization::checkAccess()){
-    header("Location: catalog.php");  
+    header("Location: index.php?p=home");
 }else{
     $id = Authentication::uid();
 
@@ -33,10 +28,10 @@ if(!Authorization::checkAccess()){
     
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت افزوده شد!</p></div>";
-            header("Location: addPost.php");
+            header("Location: index.php?p=addPost");
         }else{
             $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-            header("Location: addPost.php");
+            header("Location: index.php?p=addPost");
         }
     
     

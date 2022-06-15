@@ -1,11 +1,8 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
 
-if(!Authorization::checkRole()){
-    header("Location: catalog.php");
+if(!Authentication::check()){
+    header("Location: index.php");
 }else{
 
     if(isset($_POST['del'])){  // for group acction next releases
@@ -16,17 +13,23 @@ if(!Authorization::checkRole()){
         
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت حذف شد!</p></div>";
-            header("Location: tickets.php");
+            header("Location: index.php?p=tickets");
         }else{
             $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-            header("Location: tickets.php");
+            header("Location: index.php?p=tickets");
         }         
     }
     
     
     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-    $sql = "SELECT * FROM `ticket`";
-    $result = $dbc->query($sql);
+    if(Authorization::checkRole()){
+        $sql = "SELECT * FROM `ticket`";
+        $result = $dbc->query($sql);
+    }else{
+        $sql = "SELECT * FROM `ticket` WHERE sender=?";
+        $result = $dbc->query($sql,Authentication::uid());
+    }
+    
     $tickets = $result->fetchAll();
     
     include 'view/tickets_view.php';

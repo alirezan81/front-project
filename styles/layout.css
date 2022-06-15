@@ -1,15 +1,60 @@
 .grid{
+    align-content: center;
     justify-content: center;
     display: grid;
     gap: 8px;
     grid-template-columns: auto;
 }
-.grid-2{
-    grid-template-columns: auto auto;
+
+@media screen and (max-width:780px) {
+    .nav{
+        display: none;
+    }
+
+    .menu-icon{
+        visibility: visible;
+    }
+
+    .menu-icon{
+        display: inline-block;
+    }
 }
-.grid-3{
-    grid-template-columns: auto auto auto;
+
+@media screen and (min-width:780px){
+    .grid-2{
+        grid-template-columns: auto auto;
+    }
+
+    .grid-2{
+        grid-template-columns: auto auto;
+    }
+
+    .menu-icon{
+        visibility: visible;
+    }
+
+    .nav{
+        visibility: hidden;
+    }
 }
+
+
+@media screen and (min-width:1180px){
+    .grid-layout{
+        grid-template-columns: 15% 85%;
+    }
+
+    .grid-3{
+        grid-template-columns: auto auto auto;
+    }
+
+.nav{
+    visibility: visible;
+}
+
+}
+
+
 .grid-4{
     grid-template-columns: auto auto auto auto;
 }

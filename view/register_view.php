@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="register form">
     <title>Register</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
@@ -45,7 +44,7 @@
                 <i class="fa-solid fa-id-card"></i>
                 ثبت نام
             </button><br>
-            <a href="login.php">قبلا ثبت نام کردی؟ وارد شو!</a>     
+            <a href="index.php?p=login">قبلا ثبت نام کردی؟ وارد شو!</a>     
         </form>
 
     </div>

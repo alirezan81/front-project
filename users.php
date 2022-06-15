@@ -1,11 +1,8 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
 
 if(!Authorization::checkRole()){
-    header("Location: catalog.php");
+    header("Location: index.php");
 }else{
 
     if(isset($_POST['del'])){  // for group acction next releases
@@ -17,10 +14,10 @@ if(!Authorization::checkRole()){
         
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت حذف شد!</p></div>";
-            header("Location: users.php");
+            header("Location: index.php?p=users");
         }else{
             $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-            header("Location: users.php");
+            header("Location: index.php?p=users");
         }         
     }
     

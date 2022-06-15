@@ -1,8 +1,5 @@
 <?php
-session_start();
 
-include 'config.php';
-include 'lib/db.php';
 include 'view/register_view.php';
 
 if( isset( $_POST['submit'] ) ){
@@ -26,7 +23,7 @@ if( isset( $_POST['submit'] ) ){
     }else{       
         $_SESSION['info'] = "<div style='color: red;'><p>کاربری با این ایمیل ثبت نام کرده است!</p></div>";
         $dbc -> close();
-        header("Location: register.php");
+        header("Location: index.php?p=register");
         die();
     }
 
@@ -37,7 +34,7 @@ if( isset( $_POST['submit'] ) ){
         $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
     }
 
-    header("Location: register.php");
+    header("Location: index.php?p=register");
     $dbc -> close();
 
 

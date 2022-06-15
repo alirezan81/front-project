@@ -1,9 +1,5 @@
 <?php
-session_start();
-include 'config.php';
-include 'lib/db.php';
 include 'view/contact_view.php';
-
 
 if( isset( $_POST['submit'] ) ){
 
@@ -17,10 +13,10 @@ if( isset( $_POST['submit'] ) ){
 
     if($result){
         $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت ارسال شد!</p></div>";
-        header("Location: contact.php");
+        header("Location: index.php?p=contact");
     }else{
         $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-        header("Location: contact.php");
+        header("Location: index.php?p=contact");
     }
 
    

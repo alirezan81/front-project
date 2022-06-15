@@ -3,7 +3,8 @@
 @import "textbox.css";
 @import "input.css";
 @import "table.css";
-
+@import "layout.css";
+@import "nav.css";
 
 :root{
   --primary: var(--md-sys-color-primary-light);
@@ -11,36 +12,35 @@
   --box: var(--md-sys-color-background-light);
 }
 
-*{
-  font-family: 'Yekan Bakh', 'vazir', 'iransansmobile', 'B titr';
-  font-size: 16px;
-}
 
 body{
   background-image: url("pattern.png");
+  font-family: 'Sahel FD-WOL' , 'Yekan Bakh', 'vazir', 'iransansmobile', 'B titr';
+  font-size: 16px;
 }
+
 
 
 
 .box{
   padding: 10px;
   padding-top: 30px;
-  margin: 20px  auto;
+  margin: auto auto;
   text-align: center;
   border-radius: 10px;
   border: 1px solid rgb(160, 159, 159);
 }
 
 .box.small{
-  width: 40%;
+  width: 70%;
 }
 
 .box.medium{
-  width: 60%;
+  width: 90%;
 }
 
 .box.large{
-  width: 80%;
+  width: 97%;
 }
 
 
@@ -64,7 +64,7 @@ label:not(.radio_lbl){
 }
 
 
-h1{
+.box > h1{
   margin: 0 auto;
   background-color:var(--primary);
   width: 75%;
@@ -107,3 +107,53 @@ a{
   text-decoration: none;
 }
 
+header , footer{
+  background-image: url("header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: span 2;
+  color: white;
+  width: 97%;
+  text-align: center;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+  0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+
+  border-radius:12px;
+}
+
+/* موقت */
+header > img{
+  width: 100px;
+  height: 100px;
+}
+
+.profile{
+  margin-top: 3%;
+  border-radius: 50%;
+  width: 10%;
+  height: 10%;
+}
+
+.star:hover{
+  cursor: pointer;
+  font-size: larger;
+}
+
+.like:hover{
+  cursor: pointer;
+  font-size: larger;
+}
+
+
+.post-img{
+  width: 60%;
+  height: 20%;
+
+}
+
+.menu-icon{
+  padding: 12px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  display: none;
+}

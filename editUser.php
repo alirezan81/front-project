@@ -1,14 +1,9 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
-
-
 if(!Authorization::checkRole()){
-    header("Location: editProfile.php");
+    header("Location: index.php?p=editProfile");
 }elseif(!isset($_GET['id'])){
-    header("Location: users.php");
+    header("Location: index.php?p=users");
 }else{
 
     $id = $_GET['id'];
@@ -36,10 +31,10 @@ if(!Authorization::checkRole()){
 
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت ویرایش شد!</p></div>";
-            header("Location: editUser.php");
+            header("Location: index.php?p=editUser");
         }else{
             $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-            header("Location: editUser.php");
+            header("Location: index.php?p=editUser");
         }
 
     }else{

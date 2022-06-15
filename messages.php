@@ -1,11 +1,7 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
-
 if(!Authorization::checkRole()){
-    header("Location: catalog.php");
+    header("Location: index.php");
 }else{
 
     if(isset($_POST['del'])){  // for group acction next releases

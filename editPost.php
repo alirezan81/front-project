@@ -1,11 +1,7 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
-
 if( !(Authorization::checkAccess() && isset($_GET['id'])) ){
-    header("Location: catalog.php");  
+    header("Location: index.php");  
 }else{
     $id = $_GET['id'] ?? 0;
     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
@@ -42,10 +38,10 @@ if( !(Authorization::checkAccess() && isset($_GET['id'])) ){
     
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت ویرایش شد!</p></div>";
-            header("Location: editPost.php?id={$id}");
+            header("Location: index.php?p=editPost&id={$id}");
         }else{
             $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-            header("Location: editPost.php?id={$id}");
+            header("Location: index.php?p=editPost&id={$id}");
         }
     
     }else{

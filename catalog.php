@@ -1,8 +1,4 @@
 <?php
-    include 'config.php';
-    include 'lib/db.php';
-    include 'security.php';
-
 
     $dbc = new DB($db_host, $db_user, $db_pass, $db_name);
 

@@ -8,28 +8,29 @@ if(isset($_GET['id'])){
     $id = $_GET['id'];
     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
 
+
     if($_GET['del'] == 'user'){
         $sql = "UPDATE `users` SET status=? WHERE `id`=?";
         $result = $dbc->query( $sql,'ban',$id);
-        $redir = "Location: users.php"; 
+        $redir = "Location: index.php?p=users"; 
     }
 
     elseif($_GET['del'] == 'post'){
         $sql = "DELETE FROM `article`  WHERE `id`=?";
         $result = $dbc->query( $sql,$id );
-        $redir = "Location: posts.php";
+        $redir = "Location: index.php?p=posts";
     }
 
     elseif($_GET['del'] == 'message'){
         $sql = "DELETE FROM `message`  WHERE `id`=?";
         $result = $dbc->query( $sql,$id );
-        $redir = "Location: messages.php";
+        $redir = "Location: index.php?p=messages";
     }
 
     elseif($_GET['del'] == 'tickets'){
         $sql = "DELETE FROM `ticket`  WHERE `id`=?";
         $result = $dbc->query( $sql,$id );
-        $redir = "Location: tickets.php";
+        $redir = "Location: index.php?p=tickets";
     }
 
 

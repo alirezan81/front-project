@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="edit form">
     <title>Edit</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
@@ -60,7 +59,13 @@
             <button class="btn" type="submit" name="submit">
                 <i class="fa-solid fa-pen"></i>
                 ویرایش
-            </button>     
+            </button> 
+            
+            <button class="btn" type="submit" name="del">
+                <i class="fa-solid fa-user-xmark"></i>
+                حذف اکانت
+            </button>   
+
         </form>
 
     </div>

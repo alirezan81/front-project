@@ -1,11 +1,7 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
-
 if(!Authentication::check()){
-    header("Location: login.php");
+    header("Location: index.php?p=login");
 }else{
 
     $id = Authentication::uid();
@@ -14,7 +10,7 @@ if(!Authentication::check()){
     $result = $dbc->query( $sql, $id);
     $row = $result->fetchArray();
 
-
+    
     if( isset( $_POST['submit'] ) ){
 
         if($_POST['password'] == ""){
@@ -31,13 +27,17 @@ if(!Authentication::check()){
 
         if($result){
             $_SESSION['info'] = "<div style='color: darkgreen;'><p>با موفقیت ویرایش شد!</p></div>";
-            header("Location: editProfile.php");
+            header("Location: index.php?p=editProfile");
         }else{
             $_SESSION['info'] = "<div style='color: red;'><p>خطایی پیش آمد!</p></div>";
-            header("Location: editProfile.php");
+            header("Location: index.php?p=editProfile");
         }
 
         
+    }else if(isset($_POST['del'])){
+        $sql = "UPDATE `users` SET status=? WHERE `id`=?";
+        $result = $dbc->query( $sql,'deleted',$id);
+        header("Location: logout.php");
     }else{
         include 'view/editProfile_view.php';
     }

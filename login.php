@@ -1,8 +1,6 @@
 <?php
 
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
+
 include 'view/login_view.php';
 
 if(Authentication :: check()){
@@ -21,11 +19,11 @@ if( isset( $_POST['submit'] ) ){
     
     if ($row = $result->fetchArray()){
         Authentication :: login($row);
-        header("Location: editProfile.php");
+        header("Location: index.php?p=editProfile");
         $dbc -> close();
     }else{
         $_SESSION['info'] = "<div style='color: red;'><p>کاربری با این مشخصات یافت نشد!</p></div>";
-        header("Location: login.php");
+        header("Location: index.php?p=login");
     }  
 }
 

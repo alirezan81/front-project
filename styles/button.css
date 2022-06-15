@@ -1,12 +1,11 @@
 .btn{
-    padding: 15px 30px;
     border: none;
     background-color: var(--primary);
     color: var(--on-primary);
     border-radius: 8px;
-    margin-top: 30px;
     font-size: 15px;
     transition-duration: 0.4s;
+    padding: 15px 15px;
 } 
 .btn *{
     vertical-align: middle;
@@ -16,3 +15,8 @@
 .btn:hover{
     background-color:  #af1c28;
 }
+
+.btn:not(a){
+    margin-top: 30px;
+}
+

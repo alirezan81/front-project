@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="users form">
     <title>Users</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
@@ -44,7 +43,7 @@
                             <i class="fa-solid fa-forward"></i>
                             <i class="fa-solid fa-backward"></i>
                             <i class="fa-solid fa-backward-fast"></i>
-                            <td><a class="btn tbl" href="addUser.php">افزودن</a></td>
+                            <td><a class="btn tbl" href="index.php?p=addUser">افزودن</a></td>
                             <td><button class="btn tbl" name="del">حذف</button></td>
                         </tr>
                     </tfoot>

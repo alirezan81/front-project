@@ -7,7 +7,16 @@
         <p class="card-sub-head">پیش نیاز</p>
         <!-- <p class="card-text">محتوا</p> -->
         <div style="text-align:left;">
-            <a href="#" class="btn">مطالعه</a>
+            <i class="like fa-regular fa-heart" style="color: crimson;" onclick="toggle(this);"></i>
+            <a href="index?p=showPost&id=<?php echo $row['id'] ?>" class="btn">مطالعه</a>
         </div>
     </div>
 </article>
+
+<script>
+    function toggle(el){
+        if ( el.classList.contains('fa-regular') ){
+            el.classList.toggle('fa-solid');
+        }       
+    }             
+</script>

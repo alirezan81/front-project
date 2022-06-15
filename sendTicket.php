@@ -1,7 +1,5 @@
 <?php
-include 'config.php';
-include 'lib/db.php';
-include 'security.php';
+
 include 'view/sendTicket_view.php';
 
 if(!Authentication::check()){

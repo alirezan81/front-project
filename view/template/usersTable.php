@@ -8,11 +8,11 @@
     <td> <?php echo ($user['role'] == "admin" ? "ادمین" : "کاربر"); ?> </td> 
     <td> <?php echo ($user['level'] == "read" ? "مطالعه" : "انتشار"); ?> </td>
     <td>
-        <a class="" href="delete.php? id=<?php echo $user['id'] ?>&del=user">
+        <a class="" href="delete.php? id=<?php echo $user['id'] ?>&del=user&status=ban">
             <i class='fa-solid fa-user-slash'></i>
         </a> 
 
-        <a class="" href="editUser.php? id=<?php echo $user['id'] ?>">
+        <a class="" href="index.php?p=editUser&id=<?php echo $user['id'] ?>">
             <i class='fa-solid fa-user-pen'></i>
         </a>       
     </td>

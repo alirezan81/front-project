@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Articles posts">
     <title>Articles</title>
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/card.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
-<body dir="rtl">
+<body>
     <div class="box medium">
-        <h1>تنقلات پایتونی</h1>
-        <div class="grid grid-3" style="dir">       
+        <h1>شروع کن!</h1>
+        <div class="grid grid-3 grid-2" style="dir">       
             <?php
                 if( count( $posts ) == 0 ){
                     echo '<p>مقاله ای یافت نشد</p>';

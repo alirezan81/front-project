@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="tickets list">
     <title>Tickets</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
@@ -49,10 +48,17 @@
                             <td></td>
                             <td>عملیات های گروهی</td>
                             <td></td>
-                            <td colspan="2"><i class="fa-solid fa-forward-fast"></i>
+                            <td><i class="fa-solid fa-forward-fast"></i>
                             <i class="fa-solid fa-forward"></i>
                             <i class="fa-solid fa-backward"></i>
-                            <i class="fa-solid fa-backward-fast"></i>
+                            <i class="fa-solid fa-backward-fast"></i></td>
+
+                            <td>
+                                <?php if(!Authorization::checkRole()){
+                                    echo "<a class='btn' href='index.php?p=sendTicket'>ارسال تیکت</a>";
+                                } ?>
+                            </td>
+
                             <td><button class="btn tbl">حذف</button></td>
                         </tr>
                     </tfoot>

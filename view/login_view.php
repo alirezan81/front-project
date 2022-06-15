@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="description" content="login form">
     <title>Login</title>
-    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/18c7498de3.js" crossorigin="anonymous"></script>
 </head>
 <body dir="rtl">
@@ -29,7 +28,7 @@
                 <i class="fa-solid fa-door-open"></i>
                 ورود
             </button><br>
-            <a href="register.php">عضو نیستی؟ ثبت نام کن</a>    
+            <a href="index.php?p=register">عضو نیستی؟ ثبت نام کن</a>    
             
         </form>
 
