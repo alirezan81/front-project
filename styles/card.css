@@ -29,7 +29,9 @@ a{
     width: 250px;
     height: 200px;
 }
-
+.card-sub-head{
+    font-size: 14px;
+}
 .card.evelated{
     color: var(--surface);
     background-color: var(--on-surface);

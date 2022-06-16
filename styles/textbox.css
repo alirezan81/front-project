@@ -16,3 +16,7 @@ textarea, #editor{
 input:not(.btn , [type=radio]){
     height: 30px;
 }
+
+input , button{
+    font-family: 'iransans';
+}

@@ -50,15 +50,3 @@ class Authorization{
 }
 
 ?>
-
-<!-- // static function uinfo($uid){
-    //     $dbc = new DB( $db_host, $db_user, $db_pass, $db_name);
-    //     $sql = "SELECT * FROM `users` WHERE id=?";
-    //     $result = $dbc->query( $sql,$id );
-    //     $row = $result->fetchArray();
-    //     return $row;
-    // } Next Releases -->
-<!-- 
-به جای کوئری سلکت در لاگین
-با تابع uexsist چک بشه که تو دیتابیس کاربرهست یا نه 
-بعد اطلاعات ذخیره بشن یک بار وبعد همه جا استفاده بشن -->

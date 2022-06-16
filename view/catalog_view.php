@@ -10,7 +10,7 @@
 <body>
     <div class="box medium">
         <h1>شروع کن!</h1>
-        <div class="grid grid-3" style="dir">       
+        <div class="grid grid-2 grid-3">       
             <?php
                 if( count( $posts ) == 0 ){
                     echo '<p>مقاله ای یافت نشد</p>';

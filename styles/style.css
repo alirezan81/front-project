@@ -5,6 +5,7 @@
 @import "table.css";
 @import "layout.css";
 @import "nav.css";
+@import "font.css";
 
 :root{
   --primary: var(--md-sys-color-primary-light);
@@ -12,14 +13,21 @@
   --box: var(--md-sys-color-background-light);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
 body{
   background-image: url("pattern.png");
-  font-family: 'Sahel FD-WOL' , 'Yekan Bakh', 'vazir', 'iransansmobile', 'B titr';
-  font-size: 16px;
+  font-family: 'iransans';
+
 }
-
-
 
 
 .box{
@@ -72,7 +80,7 @@ label:not(.radio_lbl){
   color: var(--on-primary);
   border-radius: 10px;
   padding: 6px 0;
-  font-size: 25px;
+
 }
 
 
@@ -150,3 +158,4 @@ header > img{
   height: 20%;
 
 }
+

@@ -9,7 +9,7 @@
 
 
 
-<body dir="rtl" class="grid grid-2">
+<body dir="rtl" class="grid grid-layout-index">
     <?php
 
         ob_start();
@@ -18,7 +18,7 @@
         include 'lib/db.php';
         include 'security.php';
 
-
+        
         include "view/template/header.php";
         include "view/template/nav.php";
 

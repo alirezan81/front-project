@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 15, 2022 at 08:22 PM
+-- Generation Time: Jun 15, 2022 at 09:04 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.26
 
@@ -50,6 +50,20 @@ INSERT INTO `article` (`id`, `writer`, `subject`, `content`, `time`, `cover`, `s
 (7, 1, 'Cpython', '<p style=\"text-align: center;\">یکی از مفسر های پایتون</p>', 20, 'cython_logo.webp', 'published'),
 (8, 20, 'List Comprehension', '<h2 style=\"text-align: right;\">خلاصه لیست یا لیست ساز</h2>\n<p style=\"text-align: right;\">مثال شماره یک: تولید لیست کپیتال اسامی لیست</p>\n<p><img class=\"post-img\" style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"images/list_comprehension_1\" alt=\"\"></p>\n<p style=\"text-align: right;\">مثال شماره دو: تولید لیست دو بعدی تجزیه کننده ی کاراکتر ها به صورت آپر کیس</p>\n<p><img class=\"post-img\" style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"images/list_comprehension_2.png\" alt=\"\"></p>\n<p style=\"text-align: right;\">مثال شماره سه: به مثال زیر توجه کنید. با دو تا مثال بالا متفاوته</p>\n<p><img class=\"post-img\" style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"images/list_comprehension_3.png\" alt=\"\"></p>\n<p style=\"text-align: right;\">مثال شماره چهارم: درک بهتر مثال بالا</p>\n<p><img class=\"post-img\" style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"images/list_comprehension_4.png\" alt=\"\"></p>\n<p>&nbsp;</p>', 15, 'lc-py.png', 'published'),
 (10, 13, 'F-String', '<h2 style=\"text-align: center;\">فرمت بندی رشته ها با f-string</h2>', 10, 'fs-py.png', 'published');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `like_product`
+--
+
+DROP TABLE IF EXISTS `like_product`;
+CREATE TABLE IF NOT EXISTS `like_product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `post_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_persian_ci;
 
 -- --------------------------------------------------------
 
